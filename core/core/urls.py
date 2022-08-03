@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from django.contrib.auth import views as auth_views
+
+from core import consumers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +30,8 @@ urlpatterns = [
     path('api/accounts/login/', auth_views.LoginView.as_view()),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+]
 
+websocket_urlpatterns = [
+    re_path(r'ws/(?P<user_id>\d+)/', consumers.ChatConsumer.as_asgi()),
 ]

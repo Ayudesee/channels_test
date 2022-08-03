@@ -9,6 +9,7 @@ djangorestframework = "*"
 drf-spectacular = "*"
 channels = "*"
 channels-redis = "*"
+websockets = "*"
 
 [dev-packages]
 

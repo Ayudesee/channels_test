@@ -17,4 +17,4 @@ class LoginView(views.APIView):
             login(request, user)
             return Response({"detail": "Success"})
         else:
-            return Response({"detail": "Wrond Credentials"}, status=400)
+            return Response({"detail": "Wrong Credentials"}, status=400)
