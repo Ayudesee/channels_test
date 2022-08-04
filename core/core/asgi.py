@@ -20,7 +20,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 
 application = ProtocolTypeRouter({
     "http": get_asgi_application(),
-    "websocket": # AllowedHostsOriginValidator(
+    "websocket":  # AllowedHostsOriginValidator(
         AuthMiddlewareStack(
             URLRouter(
                 websocket_urlpatterns
