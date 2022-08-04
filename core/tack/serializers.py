@@ -19,7 +19,7 @@ class TackSerializer(serializers.ModelSerializer):
         if isinstance(price, str):
             if re.fullmatch(r"\.\d+", price):
                 price = "0" + price
-            if re.fullmatch(r"\d+\.\d{1,2}", price):
+            if re.fullmatch(r"\d+\.\d{0,2}", price):
                 price = int(round(float(price), 2) * 100)
         elif isinstance(price, float):
             price = int(round(price, 2) * 100)
