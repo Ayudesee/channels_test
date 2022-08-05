@@ -10,6 +10,7 @@ drf-spectacular = "*"
 channels = "*"
 channels-redis = "*"
 websockets = "*"
+django-admin-charts = "*"
 
 [dev-packages]
 

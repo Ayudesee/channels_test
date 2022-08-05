@@ -6,7 +6,7 @@ from tack.models import Tack
 
 
 class TackSerializer(serializers.ModelSerializer):
-    price = serializers.DecimalField(max_digits=8, decimal_places=2)
+    price = serializers.DecimalField(max_digits=8, decimal_places=2, min_value=50)
 
     def to_representation(self, instance):
         data = super(TackSerializer, self).to_representation(instance)

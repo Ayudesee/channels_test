@@ -21,6 +21,7 @@ from django.contrib.auth import views as auth_views
 from core import consumers
 
 urlpatterns = [
+    path('admin_tools_stats/', include('admin_tools_stats.urls')),
     path('admin/', admin.site.urls),
     path('api/', include("group.urls")),
     path('api/', include("offer.urls")),
