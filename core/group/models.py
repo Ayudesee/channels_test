@@ -6,5 +6,5 @@ class Group(models.Model):
 
 
 class GroupMembers(models.Model):
-    group = models.ForeignKey("group.Group", on_delete=models.CASCADE, related_name="group_group")
-    user = models.ForeignKey("user.User", on_delete=models.CASCADE, related_name="group_user")
+    group = models.ForeignKey("group.Group", on_delete=models.CASCADE)
+    user = models.ForeignKey("user.User", on_delete=models.CASCADE)
